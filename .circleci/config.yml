@@ -15,6 +15,6 @@ jobs:
           name: Install npm 
           command: 'npm install'
        - run:
-          name: Install npm wee
+          name: Reload fixtures
           command: 'bin/fixture reload'
        - run: echo "hello $MONGO_URI"
