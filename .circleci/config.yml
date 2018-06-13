@@ -17,4 +17,9 @@ jobs:
        - run:
           name: Reload fixtures
           command: 'bin/fixture reload'
+       - run:
+          name: Start server
+          command: 'npm start'
+          background: true
+          
        - run: echo "hello $MONGO_URI"
