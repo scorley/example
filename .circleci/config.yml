@@ -11,4 +11,10 @@ jobs:
        - run:
           name: Install babel-cli
           command: 'sudo npm install -g babel-cli'
+       - run:
+          name: Install npm 
+          command: 'npm install'
+       - run:
+          name: Install npm wee
+          command: 'bin/fixture reload'
        - run: echo "hello $MONGO_URI"
