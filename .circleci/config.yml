@@ -7,13 +7,12 @@ jobs:
        - image: redis
      environment: 
        MONGO_URI: mongodb://localhost:27017/aim
+       DOCKERIZE_VERSION: v0.3.0
      steps:
        - checkout
        - run:
           name: install dockerize
           command: 'wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz'
-          environment:
-            DOCKERIZE_VERSION: v0.3.0
       - run:
           name: Wait for db
           command: 'dockerize -wait tcp://localhost:6379 -timeout 1m'
